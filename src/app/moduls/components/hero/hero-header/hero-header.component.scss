@@ -1,0 +1,61 @@
+@use 'style-varibles/variables' as v;
+@use 'style-varibles/colors' as c;
+@use 'style-varibles/mixins' as m;
+
+header {
+  height: 100px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: v.$padding-0-72;
+
+ .header-left {
+    width: 200px;
+    display: flex;
+    justify-content: flex-start; // Icons linksbündig starten
+    align-items: center;
+    gap: 15px; // Erzeugt den Abstand zwischen den Icons
+
+    a {
+      display: flex; // Verhindert Inline-Verschiebungen
+      align-items: center;
+      justify-content: center;
+      width: 30px;  // Feste Breite für den Klickbereich
+      height: 30px; // Feste Höhe für den Klickbereich
+      
+      img {
+        width: 100%;  // Bild füllt die 30px exakt aus
+        height: 100%;
+        object-fit: contain; // Verhindert Verzerrung beim Bildwechsel
+        transition: transform 0.2s ease; // Optional: Kleiner Effekt
+      }
+
+      &:hover img {
+        transform: scale(1.1); // Optional: Icon wird minimal größer
+      }
+    }
+  }
+
+  .name-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 70px;
+    }
+    span{
+        font-family: monospace;
+        font-size: 30px;
+        font-weight: 900;
+        color: c.$titleName-white;
+    }
+  }
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
