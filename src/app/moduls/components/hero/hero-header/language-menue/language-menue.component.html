@@ -1,4 +1,21 @@
-
-<img src="assets/img/icons/deBtnWhite.svg" alt="Button for Language Choose">
-
-
+@if (isGerman) {
+  <a (click)="toggleLanguage()" class="icon-de" style="cursor: pointer" aria-label="Switch to English">
+    <img
+      #deIcon
+      src="assets/img/icons/deBtnWhite.svg"
+      (mouseenter)="deIcon.src = 'assets/img/icons/deBtnOrange.svg'"
+      (mouseleave)="deIcon.src = 'assets/img/icons/deBtnWhite.svg'"
+      alt="German Language Icon"
+    />
+  </a>
+} @else {
+  <a (click)="toggleLanguage()" class="icon-en" style="cursor: pointer" aria-label="Auf Deutsch umstellen">
+    <img
+      #enIcon
+      src="assets/img/icons/enBtnWhite.svg"
+      (mouseenter)="enIcon.src = 'assets/img/icons/enBtnOrange.svg'"
+      (mouseleave)="enIcon.src = 'assets/img/icons/enBtnWhite.svg'"
+      alt="English Language Icon"
+    />
+  </a>
+}

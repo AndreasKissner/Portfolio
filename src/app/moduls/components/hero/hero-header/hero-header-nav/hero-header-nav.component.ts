@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './hero-header-nav.component.scss',
 })
 export class HeroHeaderNavComponent {
+isMenuOpen = false;
 
+toggleMenu() {
+  this.isMenuOpen = !this.isMenuOpen;
+}
 }

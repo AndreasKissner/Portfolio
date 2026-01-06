@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './language-menue.component.scss',
 })
 export class LanguageMenueComponent {
+// In deiner Komponente
+isGerman = true; // Startzustand
 
+toggleLanguage() {
+  this.isGerman = !this.isGerman;
+}
 }

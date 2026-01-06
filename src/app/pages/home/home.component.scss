@@ -13,10 +13,34 @@ section {
 }
 
 // 1. ANFORDERUNG: Above the Fold immer 100vh
-#about {
+#hero {
   height: 100vh;
   min-height: 600px; // Sicherheit für kleine Bildschirme
   background-color: c.$dark-blue; // Hier lag der Fehler - jetzt korrekt benannt
+}
+
+#about {
+  background-color: c.$about-beige; 
+}
+
+#skills {
+  background-color: c.$skill-black;
+}
+
+#portfolio{
+    background-color: c.$about-beige;
+}
+
+#references{
+    background-color: c.$dark-blue;
+}
+
+#contact{
+    background-color: c.$skill-black;
+}
+
+#footer{
+    background-color: c.$skill-black;
 }
 
 // 2. ANFORDERUNG: Content begrenzt auf z.B. 1440px

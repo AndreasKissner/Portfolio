@@ -1,0 +1,9 @@
+@use 'style-varibles/variables' as v;
+@use 'style-varibles/colors' as c;
+@use 'style-varibles/mixins' as m;
+
+.legal {
+  background-color: c.$skill-black;
+  min-height: 100vh;
+  @include m.main-container; // Nutzt das Mixin für max-width: 1440px
+}
