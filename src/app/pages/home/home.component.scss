@@ -1,6 +1,6 @@
-@use "style-varibales/variables" as v;
-@use "style-varibales/colors" as c;
-@use "style-varibales/mixins" as m;
+@use "style-varibles/variables" as v;
+@use "style-varibles/colors" as c;
+@use "style-varibles/mixins" as m;
 
 :host {
   display: block;
@@ -13,7 +13,7 @@ section {
 }
 
 // 1. ANFORDERUNG: Above the Fold immer 100vh
-#hero {
+#about {
   height: 100vh;
   min-height: 600px; // Sicherheit für kleine Bildschirme
   background-color: c.$dark-blue; // Hier lag der Fehler - jetzt korrekt benannt
