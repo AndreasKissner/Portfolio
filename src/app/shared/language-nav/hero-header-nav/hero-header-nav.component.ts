@@ -7,9 +7,18 @@ import { Component } from '@angular/core';
   styleUrl: './hero-header-nav.component.scss',
 })
 export class HeroHeaderNavComponent {
-isMenuOpen = false;
+  isMenuOpen = false;
 
-toggleMenu() {
-  this.isMenuOpen = !this.isMenuOpen;
-}
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // Diese Methode fehlte noch, damit die (click)="onClose()" Aufrufe funktionieren
+  onClose() {
+    this.isMenuOpen = false;
+  }
+
+  openMenue() {
+    console.log("Menu state changed to:", this.isMenuOpen);
+  }
 }

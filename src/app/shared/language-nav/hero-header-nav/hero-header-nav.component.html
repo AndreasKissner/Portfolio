@@ -1,5 +1,34 @@
-<div class="burger-icon" [class.open]="isMenuOpen" (click)="isMenuOpen = !isMenuOpen">
+<div class="burger-icon" [class.open]="isMenuOpen" (click)="toggleMenu()">
   <span></span>
   <span></span>
   <span></span>
+</div>
+
+<div class="menu-overlay" [class.active]="isMenuOpen">
+  <div class="menu-content">
+    
+    <div class="menu-header">
+      <h2>Menu</h2>
+      <button class="close-btn" (click)="onClose()">✕</button>
+    </div>
+
+    <nav class="menu-links">
+  <a href="#about" (click)="onClose()">
+    <span class="icon-sun"></span> About Me
+  </a>
+  <a href="#skillset" (click)="onClose()">
+    <span class="icon-sun"></span> Skillset
+  </a>
+  <a href="#portfolio" (click)="onClose()">
+    <span class="icon-sun"></span> Portfolio
+  </a>
+  <a href="#references" (click)="onClose()">
+    <span class="icon-sun"></span> References
+  </a>
+  <a href="#contact" (click)="onClose()">
+    <span class="icon-sun"></span> Contact me
+  </a>
+</nav>
+
+  </div>
 </div>
