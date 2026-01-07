@@ -15,3 +15,18 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+/* styles.scss */
+
+@font-face {
+  font-family: 'QuickFont';
+  src: url('/assets/fonts/quick.ttf') format('truetype'); // Beachte den / am Anfang
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpaceFont';
+  src: url('/assets/fonts/space.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

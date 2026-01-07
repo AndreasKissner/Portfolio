@@ -1,1 +1,29 @@
 <app-hero-header></app-hero-header>
+
+<section class="hero-container">
+  <div class="hero-content-hello-btn">
+  
+  <h1>{{ displayText() }}<span class="cursor">|</span></h1>
+  <span>Andreas Kissner</span>
+  <span>Frontend Developer</span>
+ 
+
+
+    <div class="send-messages">
+      <img #mailIcon src="assets/img/icons/sendMessageWhite.svg"
+        (mouseenter)="mailIcon.src = 'assets/img/icons/sendMessageOrange.svg'"
+        (mouseleave)="mailIcon.src = 'assets/img/icons/sendMessageWhite.svg'" alt="Send Message Icon" />
+    </div>
+
+    <div class="scroll-down">
+      <img src="assets/img/icons/scroll-down.svg" alt="" />
+    </div>
+  </div>
+
+  <div class="hero-images">
+    <img class="profil-bg-img" src="assets/img/icons/profil.bg.svg" alt="">
+    <img class="profil-img" src="assets/img/profil.webp" alt="Hanna Schneider" />
+  </div>
+
+  <app-pointer-nav></app-pointer-nav>
+</section>
