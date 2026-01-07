@@ -1,0 +1,11 @@
+ @use 'style-varibles/variables' as v;
+@use 'style-varibles/colors' as c;
+@use 'style-varibles/mixins' as m;
+ .send-messages {
+    margin-top: 20px; // Schiebt den Button ein Stück weiter weg vom Text
+
+    img {
+      cursor: pointer;
+      width: 155px; // Falls du die Größe kontrollieren willst
+    }
+  }

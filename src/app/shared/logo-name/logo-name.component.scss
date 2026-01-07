@@ -1,0 +1,19 @@
+  @use 'style-varibles/variables' as v;
+@use 'style-varibles/colors' as c;
+@use 'style-varibles/mixins' as m;
+
+  .name-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 70px;
+    }
+
+    span {
+      font-family: v.$font-second;
+      font-size: 30px;
+      font-weight: 900;
+      color: c.$titleName-white;
+    }
+  }
