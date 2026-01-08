@@ -1,0 +1,23 @@
+@use 'style-varibles/variables' as v;
+@use 'style-varibles/colors' as c;
+@use 'style-varibles/mixins' as m;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.about-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap:100px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  padding: v.$padding-0-20;
+}

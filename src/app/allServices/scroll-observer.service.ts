@@ -12,7 +12,7 @@ export class ScrollObserverService {
   init(sectionIds: string[]) {
     const options = {
       root: null,
-      threshold: 0.6 // 60% Sichtbarkeit
+      threshold: 0.6 
     };
 
     const observer = new IntersectionObserver((entries) => {

@@ -1,6 +1,7 @@
 @use 'style-varibles/variables' as v;
 @use 'style-varibles/colors' as c;
 @use 'style-varibles/mixins' as m;
+@use 'style-varibles/fonts' as f;
 
 :host {
   display: flex;
@@ -15,9 +16,11 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  gap: 100px;
   max-width: 1200px;
   margin: auto;
   position: relative;
+  padding: v.$padding-0-20;
 }
 
 .hero-content-hello-btn {
@@ -29,7 +32,8 @@
   z-index: 10;
 
   h1 {
-    font-family: v.$font-second;
+    font-family: f.$font-second;
+    color: c.$titleName-white;
     font-size: 24px;
     font-weight: 900;
     display: flex;
@@ -55,17 +59,9 @@
   span {
     display: block; // Damit die Spans untereinander stehen
     font-size: 40px;
-    font-family: v.$font-premier;
+    font-family: f.$font-premier;
+    color: c.$titleName-white;
     font-weight: 100;
-  }
-
-  .send-messages {
-    margin-top: 20px; // Schiebt den Button ein Stück weiter weg vom Text
-
-    img {
-      cursor: pointer;
-      width: 155px; // Falls du die Größe kontrollieren willst
-    }
   }
 
   .scroll-down {
@@ -74,33 +70,5 @@
     img {
       height: 135px;
     }
-  }
-}
-
-.hero-images {
-  flex: 0 0 40%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  position: relative;
-
-  .profil-img {
-    // Verhindert, dass das Bild breiter als die 40% oder höher als der Hero wird
-    width: 375px;
-    max-width: 620px;
-    max-height: 100%;
-    object-fit: contain; // Wichtig: Behält Proportionen bei, ohne zu überlappen
-    display: block;
-    z-index: 7;
-  }
-
-  .profil-bg-img {
-    position: absolute;
-    bottom: 175px;
-    right: 54px;
-    z-index: 6;
-    width: 250px;
-    max-height: 100%;
-    object-fit: contain;
   }
 }

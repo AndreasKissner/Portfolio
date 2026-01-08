@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject,  } from '@angular/core';
+import { ScrollObserverService } from '../../allServices/scroll-observer.service';
 
 @Component({
   selector: 'app-pointer-nav',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class PointerNavComponent {
 
+  // Pointer Scroll start
+// Mit @Input sagen wir: "Dieser Wert kommt von der HomeComponent"
+  public observerService = inject(ScrollObserverService);
+  // Pointer Scroll End
 }

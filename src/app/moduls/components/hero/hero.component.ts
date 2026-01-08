@@ -1,46 +1,26 @@
-import { Component, OnInit, signal } from '@angular/core'; // signal importiert
-import { HeroHeaderComponent } from './hero-header/hero-header.component';
+import { Component, inject, OnInit } from '@angular/core'; // signal importiert
 import { PointerNavComponent } from '../../../shared/pointer-nav/pointer-nav.component';
+import { PrimaerBtnComponent } from '../../../shared/primaer-btn/primaer-btn.component';
+import { ProfilImageContainerComponent } from './profil-image-container/profil-image-container.component';
+import { DisplayTextService } from '../../../allServices/display-text-service';
+import { HeaderComponent } from '../../../shared/header/header.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [HeroHeaderComponent, PointerNavComponent],
+  imports: [ PointerNavComponent, HeaderComponent, PrimaerBtnComponent, ProfilImageContainerComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss',
 })
 export class HeroComponent implements OnInit {
-  // Ein Signal statt einer normalen Variable
-  displayText = signal(''); 
-  
-  private fullText = 'console.log("Hello world");';
-  private typoText = 'console.log("Helo';
 
-  ngOnInit(): void {
-    this.typeEffect();
-  }
+//STart Servicer Inject DisplayText
+  //Mega Wichtig für service
+  public textService = inject(DisplayTextService);
+ngOnInit() {
+    // 2. Wir starten den Effekt manuell, da ngOnInit in Services 
+    // oft nicht automatisch von Angular aufgerufen wird
+    this.textService.typeEffect();
+  }//End Display tesxt Service
 
-  async typeEffect(): Promise<void> {
-    // 1. Tippen bis Fehler
-    for (let i = 0; i <= this.typoText.length; i++) {
-      this.displayText.set(this.typoText.substring(0, i)); // .set() aktualisiert das Signal
-      await this.delay(120);
-    }
-
-    await this.delay(600);
-
-    // 2. Korrektur
-    this.displayText.set('console.log("Hel');
-    await this.delay(400);
-
-    // 3. Fertig schreiben
-    for (let i = 12; i <= this.fullText.length; i++) {
-      this.displayText.set(this.fullText.substring(0, i));
-      await this.delay(120);
-    }
-  }
-
-  private delay(ms: number): Promise<void> {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 }

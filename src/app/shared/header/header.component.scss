@@ -8,7 +8,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: v.$padding-0-72;
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
+   padding: v.$padding-0-20; 
 
   .header-left {
     width: 200px;
@@ -34,22 +37,6 @@ header {
       &:hover img {
         transform: scale(1.1);
       }
-    }
-  }
-
-  .name-middle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 70px;
-    }
-
-    span {
-      font-family: v.$font-second;
-      font-size: 30px;
-      font-weight: 900;
-      color: c.$titleName-white;
     }
   }
 }
