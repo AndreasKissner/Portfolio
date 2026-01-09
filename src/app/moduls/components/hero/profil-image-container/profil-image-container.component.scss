@@ -1,36 +1,53 @@
+:host {
+  position: absolute;
+  bottom: 0;
+  right: 190px; 
+  z-index: 5;
+  max-height: 100%;
+}
+
 .hero-images {
-  
   height: 100%;
   display: flex;
   align-items: flex-end;
   position: relative;
 
   .profil-img {
-    // Verhindert, dass das Bild breiter als die 40% oder höher als der Hero wird
-    width: 390px;
-    max-width: 620px;
-    max-height: 100%;
-    object-fit: contain; // Wichtig: Behält Proportionen bei, ohne zu überlappen
+    width: 100%;
+    max-width: 421px;
+    height: auto;
+
+    object-fit: contain;
     display: block;
     z-index: 7;
-  }
 
-  .profil-bg-img {
+    @media (max-width: 949px) {
+      max-width: 370px;
+    }
+  }
+}
+
+.profil-bg-img {
     position: absolute;
-    bottom: 195px;
-    right: 54px;
+    bottom: 168px;
+    right: -66px;
     z-index: 6;
-    width: 250px;
+    width: 324px;
     max-height: 100%;
     object-fit: contain;
+
+  @media (max-width: 949px) {
+    bottom: 150px;
+    right: 10px;
+    width: 180px;
   }
-   .profil-bg-img-2 {
-    position: absolute;
-    bottom: 3%;
-    right: 274px;
-    z-index: 6;
-    width: 250px;
-    max-height: 100%;
-    object-fit: contain;
-  }
+}
+.profil-bg-img-2 {
+  position: absolute;
+  bottom: 3%;
+  right: 220px;
+  z-index: 6;
+  width: 250px;
+  max-height: 100%;
+  object-fit: contain;
 }

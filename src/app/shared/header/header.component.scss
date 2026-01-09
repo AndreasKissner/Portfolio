@@ -4,14 +4,16 @@
 
 header {
   height: 100px;
-  border: 2px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1140px;
   margin: auto;
-   padding: v.$padding-0-20; 
+  padding: v.$padding-0-10;
+  @media (max-width: 576px) {
+    height: 75px
+  }
 
   .header-left {
     width: 200px;
@@ -47,9 +49,7 @@ nav {
   gap: 20px;
 }
 @media screen and (max-width: 576px) {
-    // Wir sprechen direkt das Komponenten-Tag an, 
-    // das sich innerhalb deines Headers befindet.
-    header app-header-social-btn {
-        display: none !important;
-    }
+  header app-header-social-btn {
+    display: none !important;
+  }
 }

@@ -10,14 +10,16 @@
 }
 
 .reference-container {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  gap: 100px;
-  max-width: 1200px;
-  margin: auto;
-  position: relative;
-  padding: v.$padding-0-20;
+
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+    max-width: 1150px;
+    margin: auto;
+    position: relative;
+    padding: 0 10px;
+
 }
