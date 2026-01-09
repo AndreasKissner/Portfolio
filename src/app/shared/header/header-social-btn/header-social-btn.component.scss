@@ -1,3 +1,58 @@
-a{
-    margin-right: 20px;
+/* --- 1. ALLGEMEIN (Desktop & Header) --- */
+.social-btn-container {
+  display: flex;         /* Icons nebeneinander */
+  flex-direction: row;   /* In einer Reihe */
+  align-items: center;
+  gap: 15px;             /* Abstand zwischen den Icons */
+}
+
+.social-link {
+  display: inline-flex;  /* Verhindert 100% Breite */
+  text-decoration: none;
+}
+
+.img-desktop {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+/* Mobile Bilder auf Desktop IMMER verstecken */
+.img-mobile {
+  display: none !important;
+}
+
+/* --- 2. MOBILE LOGIK (Ab 576px und kleiner) --- */
+@media screen and (max-width: 576px) {
+  .img-desktop {
+    display: none !important;
+  }
+
+  .social-link {
+    /* ... deine anderen Styles ... */
+
+    .img-mobile.black {
+      display: block !important;    /* DAS HIER ERZWINGEN */
+      visibility: visible !important;
+      width: 30px !important;
+      height: 30px !important;
+      opacity: 1 !important;
+    }
+
+    .img-mobile.orange-mobile {
+      display: none; /* Standardmäßig aus, wird erst bei :active angezeigt */
+    }
+
+    /* Klick-Effekt auf Mobile */
+    &:active {
+      .black { 
+        display: none !important; 
+      }
+      .orange-mobile {
+        display: block !important;
+        width: 28px !important; 
+        height: 28px !important;
+      }
+    }
+  }
 }

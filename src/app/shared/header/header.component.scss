@@ -46,3 +46,10 @@ nav {
   align-items: center;
   gap: 20px;
 }
+@media screen and (max-width: 576px) {
+    // Wir sprechen direkt das Komponenten-Tag an, 
+    // das sich innerhalb deines Headers befindet.
+    header app-header-social-btn {
+        display: none !important;
+    }
+}

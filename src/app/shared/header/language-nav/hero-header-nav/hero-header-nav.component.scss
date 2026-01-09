@@ -44,16 +44,16 @@
   z-index: 1000;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start; 
+  align-items: flex-start;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.3s ease-in-out;
-  pointer-events: none; 
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
 
   &.active {
     visibility: visible;
     opacity: 1;
-    pointer-events: all; 
+    pointer-events: all;
 
     .menu-content {
       transform: translateX(0);
@@ -62,25 +62,43 @@
 }
 
 .menu-content {
-  width: 230px; 
-  height: auto; 
+  width: 230px;
+  height: auto;
   background-color: #fdfdf0;
   border: 3px solid #2d2d2d;
   border-radius: 4px;
   padding: 20px 20px;
-  margin-top: 20px; 
-  margin-right: 60px; 
-  transform: translateX(120%); 
+  margin-top: 20px;
+  margin-right: 60px;
+  transform: translateX(120%);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
+} 
+
+::ng-deep .social-mobile {
+  display: none !important;
 }
+
+@media screen and (max-width: 576px) {
+  ::ng-deep .social-mobile {
+    display: flex !important;    
+    justify-content: flex-start !important;    
+    margin-top: 20px !important;           
+    width: 100% !important;
+    
+    * {
+      visibility: visible !important;
+    }
+  }
+}
+
 
 .menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 
   h2 {
     font-family: 'Inter', sans-serif;
@@ -88,19 +106,40 @@
     font-size: 1.8rem;
     margin: 0;
   }
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; 
 
-  .close-btn {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: #f2a94a;
-    cursor: pointer;
-    line-height: 1;
-    transition: transform 0.2s;
-    &:hover {
-      transform: scale(1.1);
+  img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease; 
+  }
+
+  .close-active {
+    display: none; 
+  }
+
+  .close-default {
+    display: block; 
+  }
+
+  &:active {
+    transform: scale(0.9); 
+    .close-default {
+      display: none !important; 
+    }
+    .close-active {
+      display: block !important; 
     }
   }
+}
 }
 
 .menu-links {
@@ -116,36 +155,31 @@
     display: flex;
     align-items: center;
     transition: color 0.2s;
-    overflow: hidden; // Verhindert Flackern während der Animation
+    /*overflow: hidden;  */
 
     .icon-sun {
       display: inline-block;
       background-image: url('/assets/img/icons/profil-bg-2.webp');
       background-size: contain;
       background-repeat: no-repeat;
-
-      /* Start-Zustand: Kein Platzverbrauch */
       width: 0;
       height: 20px;
       opacity: 0;
       margin-right: 0;
-
-      /* Sanfter Übergang für Breite und Sichtbarkeit */
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.250s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    // Effekt beim Hover ODER wenn der Link aktiv ist
     &:hover,
     &.active-link {
       color: #7ba2b1;
 
       .icon-sun {
-        width: 20px; // Nimmt jetzt Platz ein
-        opacity: 1; // Wird sichtbar
-        margin-right: 12px; // Schiebt den Text nach rechts
+        width: 20px; 
+        opacity: 1; 
+        margin-right: 12px; 
 
         &:hover .icon-sun {
-          transform: rotate(45deg); /* Dreht die Sonne beim Erscheinen */
+          transform: rotate(45deg); 
         }
       }
     }

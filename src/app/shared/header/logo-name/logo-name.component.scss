@@ -18,3 +18,15 @@
     color: c.$titleName-white;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .name-middle {
+           position: relative;
+        left: -52px;
+        top: -3px;
+        span{
+           font-size: 24px;
+        }
+  }
+}
+

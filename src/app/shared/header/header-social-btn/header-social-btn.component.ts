@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header-social-btn',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './header-social-btn.component.scss',
 })
 export class HeaderSocialBtnComponent {
-
+// Signals für den Hover-Zustand
+  gitHover = signal(false);
+  linkedInHover = signal(false);
+  mailHover = signal(false);
 }

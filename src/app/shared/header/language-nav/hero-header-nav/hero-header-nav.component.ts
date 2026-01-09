@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { HeaderSocialBtnComponent } from '../../header-social-btn/header-social-btn.component';
+
 
 @Component({
   selector: 'app-hero-header-nav',
-  imports: [],
+  imports: [HeaderSocialBtnComponent],
   templateUrl: './hero-header-nav.component.html',
   styleUrl: './hero-header-nav.component.scss',
 })
