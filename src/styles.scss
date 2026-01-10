@@ -15,11 +15,11 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-/* styles.scss */
+
 
 @font-face {
   font-family: 'QuickFont';
-  src: url('/assets/fonts/quick.ttf') format('truetype'); // Beachte den / am Anfang
+  src: url('/assets/fonts/quick.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }

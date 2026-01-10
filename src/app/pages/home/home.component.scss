@@ -5,8 +5,9 @@
 :host {
   display: block;
   height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; // Erzwingt das Einrasten auf der Y-Achse
+  height: 100dvh; // Dynamic Viewport Height - passt sich der Browser-UI an
+ 
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -14,51 +15,105 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 100vh; // Jede Sektion muss genau so hoch wie der Bildschirm sein
-  scroll-snap-align: start; // Rastet am Anfang der Sektion ein
-  scroll-snap-stop: always; // Verhindert, dass man über mehrere Sektionen drüberwischt
+  min-height: 100vh;
+  height: 100dvh; // Dynamic Viewport Height für mobile Browser
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  
+  // Fallback für ältere Browser die dvh nicht unterstützen
+  @supports not (height: 100dvh) {
+    height: 100vh;
+    
+    @media (max-width: 768px) {
+      // Auf Mobile: Fixe Mindesthöhe + etwas Puffer
+      min-height: calc(100vh - 60px);
+    }
+  }
 }
 
-// 1. ANFORDERUNG: Above the Fold immer 100vh
+// 1. ANFORDERUNG: Above the Fold
 #hero {
   height: 100vh;
-  min-height: 600px; 
-@include m.metallic-gradient(c.$dark-blue);
-  padding-bottom:0; 
+  height: 100dvh;
+  min-height: 600px;
+  @include m.metallic-gradient(c.$dark-blue);
+  padding-bottom: 0;
+  
+  @media (max-width: 768px) {
+    min-height: 500px; // Reduzierte Mindesthöhe auf Mobile
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 450px;
+  }
 }
 
 #about {
-  background-color:c.$about-beige;
+  background-color: c.$about-beige;
   height: 100vh;
+  height: 100dvh;
 }
 
 #skills {
   background-color: c.$skill-black;
   height: 100vh;
+  height: 100dvh;
 }
 
-#portfolio{
-    background-color: c.$about-beige;
-    height: 100vh;
+#portfolio {
+  background-color: c.$about-beige;
+  height: 100vh;
+  height: 100dvh;
 }
 
-#references{
-    background-color: c.$dark-blue;
-    height: 100vh;
+#references {
+  background-color: c.$dark-blue;
+  height: 100vh;
+  height: 100dvh;
 }
 
-#contact{
-    background-color: c.$skill-black;
-    height: 100vh;
+#contact {
+  background-color: c.$skill-black;
+  height: 100vh;
+  height: 100dvh;
 }
 
-#footer{
-    background-color: c.$skill-black;
-    height: 100vh;
+#footer {
+  background-color: c.$skill-black;
+  height: 100vh;
+  height: 100dvh;
 }
 
-// 2. ANFORDERUNG: Content begrenzt auf z.B. 1440px
+// 2. ANFORDERUNG: Content begrenzt
 .container {
-  @include m.main-container; 
+  @include m.main-container;
   height: 100%;
+  
+  // Padding für mobile damit Content nicht an den Rand stößt
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
+
+// ALTERNATIVE: Wenn dvh Probleme macht, CSS Custom Properties nutzen
+// Dieses JavaScript musst du in deiner Component hinzufügen:
+/*
+  ngOnInit() {
+    this.setViewportHeight();
+    window.addEventListener('resize', () => this.setViewportHeight());
+  }
+  
+  private setViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+*/
+
+// Dann kannst du das verwenden:
+// height: calc(var(--vh, 1vh) * 100);

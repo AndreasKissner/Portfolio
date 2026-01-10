@@ -2,7 +2,7 @@
 
 @mixin main-container {
   width: 100%;
-  max-width: 1440px; // Hier deine Wunschbreite (1440px oder 1920px)
+  max-width: 1920px; // Hier deine Wunschbreite (1440px oder 1920px)
   margin: 0 auto;
  /*  padding: 0 24px;   */ // Abstand für Mobile
 }
@@ -19,7 +19,6 @@
     $dark-edge 100%
   );
   
-  // Optional: Ein subtiler Glanz-Effekt von oben links
   &::before {
     content: '';
     position: absolute;

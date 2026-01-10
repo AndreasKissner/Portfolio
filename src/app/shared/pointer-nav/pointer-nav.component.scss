@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  @media(max-width:480px){
+    display: none;
+  }
 }
 
 .section-indicator img {
