@@ -20,7 +20,6 @@
   display: none !important;
 }
 
-/* --- 2. MOBILE LOGIK (Ab 576px und kleiner) --- */
 @media screen and (max-width: 576px) {
   .img-desktop {
     display: none !important;
@@ -40,7 +39,6 @@
       display: none;
     }
 
-    /* Klick-Effekt auf Mobile */
     &:active {
       .black { 
         display: none !important; 

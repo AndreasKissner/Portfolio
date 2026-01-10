@@ -74,6 +74,10 @@
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
+  @media(max-width:770px){
+        margin-top: 6px;
+    margin-right: 23px;
+  }
 } 
 
 ::ng-deep .social-mobile {
@@ -92,7 +96,6 @@
     }
   }
 }
-
 
 .menu-header {
   display: flex;
@@ -155,7 +158,6 @@
     display: flex;
     align-items: center;
     transition: color 0.2s;
-    /*overflow: hidden;  */
 
     .icon-sun {
       display: inline-block;
